@@ -1,17 +1,38 @@
 import React, { Component } from 'react'
 
+import api from '../../services/api/api'
+
 import './styles.css'
 
 class Main extends Component {
+  state = {
+    biographies: []
+  }
+
+  componentDidMount() {
+    this.loadBiographies();
+  }
+
+  loadBiographies = async () => {
+    //resposta da minha API = response/resposta
+    const response = await api.get(`/biographies`)
+
+    const { docs } = response.data
+
+    this.setState({ biographies: docs })
+  }
 
   render() {
+    const { biographies } = this.state;
+
     return (
       <div className="list-biography">
-        <article>
-          <p className="name">Nome</p>
-          <p className="description-biography">Descrição</p>
-          <a href="" className="read-more">Leia mais</a>
-        </article>
+        {biographies.map(biography => (
+          <article key={biography._id}>
+            <strong>{biography.nome}</strong>
+            <p>{biography.description}</p>
+          </article>
+        ))}
       </div>
     )
   }
