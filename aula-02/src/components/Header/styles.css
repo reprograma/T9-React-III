@@ -1,7 +1,8 @@
 header#main-header{
   background: #381C38; 
   height: 80px;
-  font-size: 18px; 
+  font-size: 18px;
+  font-weight: bold; 
   color: #FFF;
   display: flex;
   align-items: center;
