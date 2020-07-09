@@ -32,7 +32,7 @@ class Main extends Component {
           <article key={biography._id}>
             <strong>{biography.nome}</strong>
             <p className="biography-description">{biography.description}</p>
-            <Link to={`/biographies/${biography._id}`}>Acessar</Link>
+            <Link to={`/biography/${biography._id}`}>Acessar</Link>
           </article>
         ))}
       </div>
