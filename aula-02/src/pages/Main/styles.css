@@ -1,0 +1,22 @@
+.biography-list{
+  max-width: 700px;
+  margin: 20px auto 0;
+  padding: 0 20px; 
+}
+
+.biography-list article{
+  background: #FFF;
+  border: 2px solid #DDD;
+  border-radius: 5px;
+  padding: 20px; 
+  margin-bottom: 15px;
+}
+
+.biography-description{
+  font-size: 16px;
+  color:#928A92;
+  margin-top: 10px;
+  line-height: 24px;
+}
+
+

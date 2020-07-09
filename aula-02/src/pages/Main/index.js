@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
-import api from '../../services/api/api'
+import api from '../../services/api'
 
 import './styles.css'
 
@@ -26,11 +27,12 @@ class Main extends Component {
     const { biographies } = this.state;
 
     return (
-      <div className="list-biography">
+      <div className="biography-list">
         {biographies.map(biography => (
           <article key={biography._id}>
             <strong>{biography.nome}</strong>
-            <p>{biography.description}</p>
+            <p className="biography-description">{biography.description}</p>
+            <Link to={`/biographies/${biography._id}`}>Acessar</Link>
           </article>
         ))}
       </div>
