@@ -21,8 +21,8 @@
 
 
 .biography-list article a{
-  height: 40px;
-  border-radius: 10px;
+  height: 42px;
+  border-radius: 5px;
   border: 2px solid #153B8E;
   color: #153B8E;
   font-size: 16px;
@@ -32,5 +32,12 @@
   margin-top: 10px;
   justify-content: center;
   align-items: center;
+  transition: all 0.4s;
 }
+
+.biography-list article a:hover{
+  background: #153B8E;
+  color: #FFF;
+}
+
 
