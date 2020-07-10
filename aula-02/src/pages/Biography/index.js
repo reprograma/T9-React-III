@@ -14,15 +14,14 @@ class Biography extends Component {
     const response = await api.get(`/biography/${id}`)
 
     this.setState({ biography: response.data })
-
   }
   render() {
     const { biography } = this.state;
     return (
-      <div>
+      <div className="biography-info">
         <h1>{biography.nome}</h1>
         <p>{biography.description}</p>
-        <div><a href={biography.url}>Leia mais</a></div>
+        <a href={biography.url}>Leia mais</a>
       </div>
     )
   }

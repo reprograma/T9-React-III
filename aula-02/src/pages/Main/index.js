@@ -8,7 +8,7 @@ import './styles.css'
 class Main extends Component {
   state = {
     biographies: [],
-    biographyInfo: {},
+    pages: 1,
     page: 1
   }
 
@@ -17,12 +17,11 @@ class Main extends Component {
   }
 
   loadBiographies = async (page = 1) => {
-    //resposta da minha API = response/resposta
     const response = await api.get(`/biographies?page=${page}`)
+    const { docs, pages } = response.data
 
-    const { docs, ...biographyInfo } = response.data
 
-    this.setState({ biographies: docs, page, biographyInfo })
+    this.setState({ biographies: docs, page, pages })
   }
 
 
@@ -38,9 +37,9 @@ class Main extends Component {
   }
 
   nextPage = () => {
-    const { page, biographyInfo } = this.state;
+    const { page, pages } = this.state;
 
-    if (page === biographyInfo.pages) return;
+    if (page === pages) return;
 
     const pageNumber = page + 1;
 
@@ -50,7 +49,7 @@ class Main extends Component {
 
 
   render() {
-    const { biographies, page, biographyInfo } = this.state;
+    const { biographies, page, pages } = this.state;
     return (
       <div className="biography-list">
         {biographies.map(biography => (
@@ -63,7 +62,7 @@ class Main extends Component {
 
         <div className="actions">
           <button disabled={page === 1} onClick={this.prevPage}>Anterior</button>
-          <button disabled={page === biographyInfo.pages} onClick={this.nextPage}>Próximo</button>
+          <button disabled={page === pages} onClick={this.nextPage}>Próximo</button>
         </div>
       </div>
     )
