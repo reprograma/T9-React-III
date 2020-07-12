@@ -1,0 +1,72 @@
+.biography-list{
+    max-width: 700px;
+    margin: 20px auto 0px;
+    padding: 0 20px;
+}
+
+.biography-list article{
+    background: #FFF;
+    border: 0px solid #363636;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.biography-description{
+    font-size: 16px;
+    color: #363636;
+    margin-top: 10px;
+    line-height: 24px;
+    
+}
+
+.biography-list article a{
+    height: 42px;
+    border-radius: 5px;
+    border: 2px solid #DAA520;
+    color: #DAA520;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s;
+}
+
+.biography-list article a:hover{
+    background-color: #DAA520;
+    color: #FFF;
+}
+
+.biography-list .actions{
+    display: flex; 
+    /* deixa meu botão separado */
+    justify-content: between; 
+    /* deixa os botões um em cada canteiro(direitp e esquerdo) */
+}
+
+.biography-list .actions button{
+    background: #DAA520;
+    color: #FFF;
+    padding: 10px;
+    /* largura interna do botão */
+    border: 0;
+    /* uma borda cinza */
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    /* cursor quando a pessoa passa o mouse em cima */
+    transition: all 0.3s;
+}
+
+.biography-list .actions button:hover{
+    opacity: 0.7;
+}
+
+.biography-list .actions button[disabled]{
+    opacity: 0.5;
+    cursor: default;
+}
